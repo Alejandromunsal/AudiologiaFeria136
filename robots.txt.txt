@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://webserver.alejandroms.es/sitemap.xml
