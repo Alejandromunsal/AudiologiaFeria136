@@ -1873,24 +1873,29 @@ section,
      Responsive
      =========================== */
   
-  @media (max-width: 768px) {
-    .calendar-card {
-      flex-direction: column;
-      text-align: center;
-      gap: 24px;
-    }
-  
-    .calendar-card .icon {
-      width: 100px;
-      height: 100px;
-      font-size: 40px;
-    }
-  
-    .calendar-btn {
-      font-size: 18px;
-      margin-top: 8px;
-    }
+
+  /* Ajustes móviles para Calendar Section */
+@media (max-width: 768px) {
+  .calendar-card {
+    flex-direction: column !important; /* Columna en móvil */
+    text-align: center; /* Centra texto */
+    padding: 2rem 1rem; /* Ajusta padding si quieres */
   }
+
+  .calendar-card .icon {
+    margin: 0 0 1rem 0 !important; /* Quita margen derecho, añade margen inferior */
+  }
+
+  .calendar-card .member-info {
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 1rem;
+  }
+
+  .calendar-card .calendar-btn {
+    align-self: center; /* Centra el botón */
+  }
+}
+
   /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
