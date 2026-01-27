@@ -257,7 +257,6 @@
     </section>
     <!-- /Hero Section -->
 
-
     <!-- SEO Section -->
     <section id="calendar" class="calendar section">
 
@@ -345,13 +344,6 @@
       </div>
 
     </section><!-- /About Section -->
-
-
-
-
-
-
-
 
     <!-- /5 PASOS PARA MEJORAR AUDICION Services-2 Section -->
     <!-- Services-2-->
@@ -505,10 +497,111 @@
     </section>
     <!-- /Calendar Section -->
 
+<!-- Pricing Section -->
+<section id="precios" class="pricing section py-5">
+  <div class="container section-title text-center" data-aos="fade-up">
+    <h2>Tabla comparativa de precios de audífonos</h2>
+    <p>Elige la gama que mejor se adapta a tu estilo de vida y necesidades auditivas.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-12">
+
+        <!-- Card principal premium -->
+        <div class="card shadow-lg rounded-4 border-0 mx-auto" style="width:80%;">
+          <div class="card-body py-4">
+
+            <div class="pricing-table-wrapper table-responsive">
+              <table class="table table-bordered text-center align-middle pricing-table mx-auto">
+                <caption class="visually-hidden">
+                  Comparativa de precios y características de audífonos por gama
+                </caption>
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col" class="fs-5"></th>
+                    <th scope="col" class="fs-5">Essential<br><span class="fw-normal fs-6">desde 68,75€/mes*</span></th>
+                    <th scope="col" class="fs-5">Advance<br><span class="fw-normal fs-6">desde 72€/mes*</span></th>
+                    <th scope="col" class="fs-5">Superior<br><span class="fw-normal fs-6">desde 90€/mes*</span></th>
+                    <th scope="col" class="fs-5">Premium<br><span class="fw-normal fs-6">desde 108€/mes*</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start fs-6">Calidad de sonido en entornos silenciosos</th>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></td>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></td>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></td>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start fs-6">Calidad sonora en ruido moderado</th>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></td>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></td>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></td>
+                    <td><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start fs-6">Baterías desechables (pilas)</th>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start fs-6">Baterías recargables</th>
+                    <td><i class="bi bi-x-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start fs-6">Tecnología Bluetooth</th>
+                    <td>Con streamer</td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                    <td><i class="bi bi-check-lg"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="nota-precio mt-3 fs-7">
+              *Precios orientativos. Financiación sujeta a condiciones.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 
+<!-- =========================
+     JS Hover Columna
+========================= -->
+<script>
+const table = document.querySelector("#precios .pricing-table");
+const rows = table.querySelectorAll("tr");
 
+rows.forEach(row => {
+  row.querySelectorAll("td, th").forEach((cell, colIndex) => {
+    cell.addEventListener("mouseenter", () => {
+      // eliminar active de todas las columnas
+      rows.forEach(r => r.querySelectorAll("td, th").forEach(c => c.classList.remove("active", "hover-col")));
+      // agregar hover a la columna sobre la que está el ratón
+      rows.forEach(r => {
+        const c = r.querySelectorAll("td, th")[colIndex];
+        if(c) c.classList.add("active");
+      });
+    });
+  });
+});
 
+</script>
+  
 
     <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
@@ -629,9 +722,6 @@
       </div>
 
     </section><!-- /Faq Section -->
-
-
-
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
@@ -796,7 +886,6 @@
       </div>
 
     </section><!-- /Testimonials Section -->
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
