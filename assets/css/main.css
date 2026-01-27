@@ -1765,11 +1765,9 @@ section,
 
 
 
-
 /* ===========================
    Calendar card
    =========================== */
-
    .calendar-card {
     display: flex;
     align-items: center;
@@ -1781,18 +1779,18 @@ section,
     border-radius: 12px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  .calendar-card:hover {
+}
+
+.calendar-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  }
-  
-  /* ===========================
-     Icono
-     =========================== */
-  
-  .calendar-card .icon {
+}
+
+/* ===========================
+   Iconos
+   =========================== */
+
+.calendar-card .icon {
     flex-shrink: 0;
     width: 120px;
     height: 120px;
@@ -1805,39 +1803,104 @@ section,
     justify-content: center;
     font-size: 50px;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .calendar-card:hover .icon {
+}
+
+.calendar-card .icon-seo {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background-color: transparent; /* fondo neutro */
+    border-radius: 50%;
+    border: 8px solid var(--accent-color); /* borde inicial */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    transition: transform 0.3s ease;
+    position: relative; /* necesario para pseudo-elemento centrado */
+    margin: 0 auto; /* centra el icono horizontalmente */
+}
+
+/* Hover icono normal */
+.calendar-card:hover .icon {
     background-color: var(--surface-color);
     border-color: var(--accent-color);
-  }
-  
-  .calendar-card:hover .icon i {
+}
+
+/* Hover icono <i> */
+.calendar-card:hover .icon i {
     color: var(--accent-color);
-  }
-  
-  /* ===========================
-     Texto centrado
-     =========================== */
-  
-  .calendar-card .member-info {
+}
+
+/* Hover ligero zoom icon-seo */
+.calendar-card:hover .icon-seo {
+    transform: scale(1.05);
+}
+
+/* Imagen dentro de iconos */
+.calendar-card .icon img,
+.calendar-card .icon-seo img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    border-radius: 50%;
+    z-index: 2; /* encima del borde animado */
+}
+
+/* ===========================
+   Borde degradado animado icon-seo
+   =========================== */
+.calendar-card .icon-seo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        var(--accent-color),
+        var(--contrast-color),
+        var(--accent-color)
+    );
+    z-index: 1; /* detrás de la imagen */
+    opacity: 0; /* invisible por defecto */
+    transition: opacity 0.4s ease;
+    transform: translate(-50%, -50%); /* centra pseudo-elemento sobre icono */
+    animation: spin 3s linear infinite; /* animación continua */
+}
+
+.calendar-card:hover .icon-seo::before {
+    opacity: 1; /* aparece al hover */
+}
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ===========================
+   Texto centrado
+   =========================== */
+.calendar-card .member-info {
     flex: 0 1 auto;
     max-width: 520px;
     text-align: center;
-  }
-  
-  .calendar-card .member-info h4 {
+}
+
+.calendar-card .member-info h1,
+.calendar-card .member-info h4 {
     font-weight: 500;
     font-size: 24px;
     margin: 0;
     color: var(--services-h2-color);
-  }
-  
-  /* ===========================
-     Botón
-     =========================== */
-  
-  .calendar-btn {
+}
+
+/* ===========================
+   Botón
+   =========================== */
+.calendar-btn {
     flex-shrink: 0;
     border: 2px solid var(--accent-color);
     font-family: var(--heading-font);
@@ -1849,51 +1912,48 @@ section,
     background-color: var(--light-background);
     text-decoration: none;
     text-align: center;
-    white-space: nowrap; /* evita salto de línea */
+    white-space: nowrap;
     transition: all 0.3s ease;
     cursor: pointer;
-  }
-  
-  .calendar-btn:hover {
+}
+
+.calendar-btn:hover {
     background-color: color-mix(in srgb, var(--accent-color), #000 10%);
     color: #fff;
     transform: translateY(-2px);
-  }
-  
-  /* ===========================
-     Utilidades
-     =========================== */
-  
-  .calendar .highlight-blue {
+}
+
+/* ===========================
+   Utilidades
+   =========================== */
+.calendar .highlight-blue {
     color: var(--accent-color);
     font-weight: 600;
-  }
-  
-  /* ===========================
-     Responsive
-     =========================== */
-  
+}
 
-  /* Ajustes móviles para Calendar Section */
+/* ===========================
+   Responsive
+   =========================== */
 @media (max-width: 768px) {
-  .calendar-card {
-    flex-direction: column !important; /* Columna en móvil */
-    text-align: center; /* Centra texto */
-    padding: 2rem 1rem; /* Ajusta padding si quieres */
-  }
+    .calendar-card {
+        flex-direction: column !important; /* Columna en móvil */
+        text-align: center;
+        padding: 2rem 1rem;
+    }
 
-  .calendar-card .icon {
-    margin: 0 0 1rem 0 !important; /* Quita margen derecho, añade margen inferior */
-  }
+    .calendar-card .icon,
+    .calendar-card .icon-seo {
+        margin: 0 0 1rem 0 !important; /* Quita margen derecho, añade margen inferior */
+    }
 
-  .calendar-card .member-info {
-    width: 100%; /* Ocupa todo el ancho */
-    margin-bottom: 1rem;
-  }
+    .calendar-card .member-info {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 
-  .calendar-card .calendar-btn {
-    align-self: center; /* Centra el botón */
-  }
+    .calendar-card .calendar-btn {
+        align-self: center;
+    }
 }
 
   /*--------------------------------------------------------------

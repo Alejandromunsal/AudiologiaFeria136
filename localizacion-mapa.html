@@ -4,16 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Centro Auditivo en Sevilla | AudioFeria – Revisión auditiva gratuita</title>
-
+  <title>Localiza nuestro centro | Centro Auditivo en Sevilla | AudioFeria | Revisión auditiva gratuita | Audífonos</title>
 <meta name="description"
   content="Centro auditivo en Sevilla. Revisión auditiva gratuita, audífonos de última generación y atención personalizada. Pide tu cita en AudioFeria.">
-
-  <meta name="keywords" content="">
-
-  <!-- Favicons 
-  <link href="assets/img/audioferiaLogo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+  <meta name="robots" content="index, follow">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -41,7 +35,41 @@
 <link rel="apple-touch-icon" href="/assets/img/icon/apple-touch-icon.png">
 
 <link rel="manifest" href="/site.webmanifest" />
-
+  <!-- Schema LocalBusiness -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "@id": "https://audioferia.es/#localbusiness",
+      "name": "Audioferia",
+      "url": "https://audioferia.es/",
+      "logo": "https://audioferia.es/assets/img/audioferiaLogo.webp",
+      "image": "https://audioferia.es/assets/img/audioferiaLogo.webp",
+      "description": "Centro auditivo en Sevilla especializado en audífonos, revisión auditiva gratuita y atención personalizada.",
+      "telephone": "+34633502211",
+      "email": "audioferia@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Feria 136",
+        "addressLocality": "Sevilla",
+        "postalCode": "41002",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.40125,
+        "longitude": -5.99426
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Sevilla"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61586663273045&locale=es_ES",
+        "https://www.instagram.com/opticacalleferia_136/"
+      ]
+    }
+    </script>
   <!-- =======================================================
   * Updated: Apr 10 2025 with Bootstrap v5.3.3
   * Author: Alejandrom Muñoz Salas
@@ -60,9 +88,19 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+34 620462044">+34 633502211</a></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/opticacalleferia_136/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <!--<a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>-->          
+            <a href="https://www.facebook.com/profile.php?id=61586663273045&locale=es_ES" class="facebook" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook de Audioferia">
+            <i class="bi bi-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/opticacalleferia_136/"
+   class="instagram"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Instagram de Audioferia">
+  <i class="bi bi-instagram" aria-hidden="true"></i>
+</a>
+
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -72,7 +110,7 @@
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center me-auto">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="assets/img/audioferiaLogo.png" alt="">
+          <img src="/assets/img/audioferiaLogo.webp" width="86" height="76" alt="Audioferia Centro Auditivo en Sevilla">
           <h2 class="sitename">AudioFeria</h2>
         </a>
 
@@ -183,53 +221,54 @@
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61586663273045&locale=es_ES" class="facebook" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook de Audioferia"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/opticacalleferia_136/"
+   class="instagram"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Instagram de Audioferia"><i class="bi bi-instagram"></i></a>
             <a href=""><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Páginas</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="primeros_signos.html">Primeros Signos</a></li>
+            <li><a href="tipos_audifonos.html">Tipos Audifonos</a></li>
+            <li><a href="localizacion-mapa.html">Localiza nuestro centro</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Inicio</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="/#about">Recupera tu audición</a></li>
+                <li><a href="/#services-2">Mejora tu audición</a></li>
+                <li><a href="/#faq">Preguntas frecuentes</a></li>
+                <li><a href="/#contact">Pide tu cita</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Primeros Signos</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
+            <li><a href="primeros_signos.html#services-2">Seis sintomas de la perdida auditiva</a></li>
+                <li><a href="primeros_signos.html#about">Escuchar bien vivir mejor</a></li>
+                <li><a href="primeros_signos.html#services">Grados de la perdida auditiva</a></li>
+                <li><a href="primeros_signos.html#faq">Preguntas frecuentes</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
+          <h4>Tipos Audífonos</h4>
           <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+            <li><a href="tipos_audifonos.html#audifonos-tipos">Intrauriculares (ITE)</a></li>
+                <li><a href="tipos_audifonos.html#audifonos-tipos">Auricular en canal (RIC)</a></li>
+                <li><a href="tipos_audifonos.html#audifonos-tipos">Retroauriculares (BTE)</a></li>
+                <li><a href="tipos_audifonos.html#faq">Preguntas frecuentes</a></li>
           </ul>
         </div>
 

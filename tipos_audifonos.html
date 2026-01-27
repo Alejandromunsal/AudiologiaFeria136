@@ -10,10 +10,7 @@
     content="Audioferia. Centro auditivo en Sevilla. Revisión auditiva gratuita, audífonos de última generación y atención personalizada. Pide tu cita en AudioFeria.">
 
   <meta name="keywords" content="">
-
-  <!-- Favicons 
-  <link href="assets/img/audioferiaLogo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+  <meta name="robots" content="index, follow">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -40,7 +37,41 @@
 <link rel="apple-touch-icon" href="/favicon.ico">
 
 <link rel="manifest" href="/site.webmanifest" />
-
+  <!-- Schema LocalBusiness -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "@id": "https://audioferia.es/#localbusiness",
+      "name": "Audioferia",
+      "url": "https://audioferia.es/",
+      "logo": "https://audioferia.es/assets/img/audioferiaLogo.webp",
+      "image": "https://audioferia.es/assets/img/audioferiaLogo.webp",
+      "description": "Centro auditivo en Sevilla especializado en audífonos, revisión auditiva gratuita y atención personalizada.",
+      "telephone": "+34633502211",
+      "email": "audioferia@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Feria 136",
+        "addressLocality": "Sevilla",
+        "postalCode": "41002",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.40125,
+        "longitude": -5.99426
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Sevilla"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61586663273045&locale=es_ES",
+        "https://www.instagram.com/opticacalleferia_136/"
+      ]
+    }
+    </script>
   <!-- =======================================================
   * Updated: Apr 10 2025 with Bootstrap v5.3.3
   * Author: Alejandrom Muñoz Salas
@@ -64,10 +95,19 @@
           <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+34 620462044">+34 633502211</a></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/opticacalleferia_136/" class="instagram"><i
-              class="bi bi-instagram"></i></a>
+          <!--<a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>-->
+          <a href="https://www.facebook.com/profile.php?id=61586663273045&locale=es_ES" class="facebook" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook de Audioferia">
+            <i class="bi bi-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/opticacalleferia_136/"
+   class="instagram"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Instagram de Audioferia">
+  <i class="bi bi-instagram" aria-hidden="true"></i>
+</a>
+
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -77,7 +117,7 @@
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center me-auto">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="assets/img/audioferiaLogo.png" alt="">
+          <img src="/assets/img/audioferiaLogo.webp" width="86" height="76" alt="Audioferia Centro Auditivo en Sevilla">
           <h2 class="sitename">AudioFeria</h2>
         </a>
 
@@ -116,9 +156,13 @@
         </nav>
 
 
-        <a class="cta-btn d-none d-sm-block" href="#"
-          onclick="window.open('localizacion-mapa.html', '_blank', 'width=800,height=600'); return false;">Pide tu
-          cita</a>
+        <a class="cta-btn d-none d-sm-block"
+   href="localizacion-mapa.html"
+   target="_blank"
+   rel="noopener noreferrer">
+  Pide tu cita
+</a>
+
 
       </div>
 
@@ -133,7 +177,11 @@
   <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">    
 
     <!-- Slide 2 – Identificación del problema -->
-    <div class="carousel-item active" style="background-image: url('assets/img/hero-carousel/carousel-3.webp');">
+    <div class="carousel-item active">
+      <img src="assets/img/hero-carousel/carousel-3.webp" srcset="assets/img/hero-carousel/carousel-2-1024.webp 1024w,
+  assets/img/hero-carousel/carousel-3.webp 1920w" sizes="(max-width: 1024px) 1024px, 1920px"
+        alt="Centro Auditivo en Sevilla especializado en tu audición" fetchpriority="high" width="1920"
+        height="1080" class="lcp-image">
       <div class="carousel-container">
 
         <h2>Audífonos adaptados a tu estilo de vida</h2>
@@ -150,18 +198,7 @@
       </div>
     </div>
 
-    
 
-    <!-- Controls -->
-    <!--<a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-    </a>
-    <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-    </a>-->
-
-    <!-- Indicators -->
-    <!--<ol class="carousel-indicators"></ol>-->
 
   </div>
 </section>
@@ -726,8 +763,9 @@
     </section>
     <!-- /Calendar Section -->
 
+    <!-- /6 sintomas de la perdida auditiva Services-2 Section -->
 
-    <section id="services-2" class="services-2 section light-background">
+    <section id="services-2" class="services-2 section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Seis síntomas de la pérdida auditiva</h2>
@@ -742,8 +780,9 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="service-item">
                 <div class="img">
-                  <img src="assets/img/6-sintomas/lovely-women-communicating-chairs.jpg" class="img-fluid"
-                    alt="Primeros Signos">
+                  <img src="assets/img/6-sintomas/lovely-women-communicating-chairs.webp" 
+                  loading="lazy" decoding="async" class="img-fluid"
+                    alt="Dificultad para seguir conversaciones">
                 </div>
                 <div class="details">
                   <div class="icon">
@@ -759,8 +798,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="service-item">
                 <div class="img">
-                  <img src="assets/img/6-sintomas/surprised-woman-speaking-phone.jpg" class="img-fluid"
-                    alt="Pide tu cita">
+                  <img src="assets/img/6-sintomas/surprised-woman-speaking-phone.webp" class="img-fluid"
+                  loading="lazy" decoding="async"  alt="Las conversaciones telefónicas no son claras">
                 </div>
                 <div class="details">
                   <div class="icon">
@@ -776,8 +815,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="service-item">
                 <div class="img">
-                  <img src="assets/img/6-sintomas/smiling-woman-looking-camera.jpg" class="img-fluid"
-                    alt="Elige tus audífonos">
+                  <img src="assets/img/6-sintomas/smiling-woman-looking-camera.webp" class="img-fluid"
+                  loading="lazy" decoding="async" alt="Parece que la gente murmura">
                 </div>
                 <div class="details">
                   <div class="icon">
@@ -793,8 +832,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="service-item">
                 <div class="img">
-                  <img src="assets/img/6-sintomas/women-reading-book-together.jpg" class="img-fluid"
-                    alt="Planes de Financiación">
+                  <img src="assets/img/6-sintomas/women-reading-book-together.webp" class="img-fluid"
+                  loading="lazy" decoding="async" alt="Dificultad para localizar sonidos">
                 </div>
                 <div class="details">
                   <div class="icon">
@@ -810,8 +849,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="service-item">
                 <div class="img">
-                  <img src="assets/img/6-sintomas/scared-woman-looking-away.jpg" class="img-fluid"
-                    alt="Servicio Postventa">
+                  <img src="assets/img/6-sintomas/scared-woman-looking-away.webp" class="img-fluid"
+                  loading="lazy" decoding="async" alt="Señales de tinnitus">
                 </div>
                 <div class="details">
                   <div class="icon">
@@ -827,8 +866,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="service-item">
                 <div class="img">
-                  <img src="assets/img/6-sintomas/mother-daughter-holding-hands.jpg" class="img-fluid"
-                    alt="Servicio Postventa">
+                  <img src="assets/img/6-sintomas/mother-daughter-holding-hands.webp" class="img-fluid"
+                  loading="lazy" decoding="async" alt="Subes demasiado el volumen de la televisión">
                 </div>
                 <div class="details">
                   <div class="icon">
@@ -843,6 +882,7 @@
         </div><!-- End Container -->
       </div><!-- End Container Fluid -->
     </section><!-- End Services-2 Section -->
+
 
 
     <!-- About Section -->
@@ -1142,14 +1182,13 @@
     </section><!-- /Faq Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section ">
+    <section id="testimonials" class="testimonials section">
 
       <div class="container">
 
         <div class="row align-items-center">
 
           <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
-            <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
               <h2>Lo que opinan nuestros clientes</h2>
               <p style="max-width: 900px; margin: 0 auto;">
@@ -1162,30 +1201,29 @@
 
             <div class="swiper init-swiper">
               <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      }
+                    }
+                  </script>
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
-                      <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0"
-                        alt="">
+                      <img src="assets/img/testimonials/testimonials-1.webp" class="testimonial-img flex-shrink-0"
+                        loading="lazy" decoding="async" alt="Testimonio cliente">
                       <div>
-                        <h3>Saul Goodman</h3>
-                        <h4>Ceo &amp; Founder</h4>
+                        <h3>Rebeca CL</h3>
                         <div class="stars">
                           <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -1194,9 +1232,11 @@
                     </div>
                     <p>
                       <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                        Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at
-                        semper.</span>
+                      <span>Me mudé cerquita de ellos y fui a preguntar precios de lentillas y las mismas que compraba
+                        antes me salían más baratas, me tardaban menos y encima el trato es absolutamente inmejorable.
+                        A parte de eso me han ayudado a cambio de nada a volver a usar gafas, que las tenía hechas un
+                        auténtico desastre.
+                        Muchas gracias!!</span>
                       <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
@@ -1205,11 +1245,10 @@
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
-                      <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0"
-                        alt="">
+                      <img src="assets/img/testimonials/testimonials-2.webp" class="testimonial-img flex-shrink-0"
+                        loading="lazy" decoding="async" alt="Testimonio cliente">
                       <div>
-                        <h3>Sara Wilsson</h3>
-                        <h4>Designer</h4>
+                        <h3>Verónica Gutiérrez</h3>
                         <div class="stars">
                           <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -1218,9 +1257,9 @@
                     </div>
                     <p>
                       <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum
-                        eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim
-                        culpa.</span>
+                      <span>Tuve una experiencia excepcional en esta óptica. El personal fue sumamente amable y
+                        profesional, el examen visual fue detallado y preciso, y la variedad de monturas es
+                        impresionante.</span>
                       <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
@@ -1229,11 +1268,10 @@
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
-                      <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0"
-                        alt="">
+                      <img src="assets/img/testimonials/testimonials-3.webp" class="testimonial-img flex-shrink-0"
+                        loading="lazy" decoding="async" alt="Testimonio cliente">
                       <div>
-                        <h3>Jena Karlis</h3>
-                        <h4>Store Owner</h4>
+                        <h3>Ali Álvarez</h3>
                         <div class="stars">
                           <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -1242,8 +1280,9 @@
                     </div>
                     <p>
                       <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                        minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                      <span>Totalmente recomendable .Me arreglaron en el momento mis gafas .
+                        Sacándome de un gran apuro .
+                        El óptico que me atendió me pareció un gran profesional y además muy amable</span>
                       <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
@@ -1252,11 +1291,10 @@
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
-                      <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0"
-                        alt="">
+                      <img src="assets/img/testimonials/testimonials-4.webp" class="testimonial-img flex-shrink-0"
+                        loading="lazy" decoding="async" alt="Testimonio cliente">
                       <div>
-                        <h3>Matt Brandon</h3>
-                        <h4>Freelancer</h4>
+                        <h3>Guillermo Urbano Lanzas</h3>
                         <div class="stars">
                           <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -1265,9 +1303,9 @@
                     </div>
                     <p>
                       <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
-                        velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
-                        veniam.</span>
+                      <span>Llevo varios años siento cliente de esta óptica y la verdad es que solo tengo palabras
+                        bonitas que ofrecer. La experiencia ha sido muy buena, son dos pedazos de profesionales con un
+                        trato muy cercano y humano y siempre con una mirada de generosidad y empatía. Gracias.</span>
                       <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
@@ -1276,11 +1314,10 @@
                 <div class="swiper-slide">
                   <div class="testimonial-item">
                     <div class="d-flex">
-                      <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0"
-                        alt="">
+                      <img src="assets/img/testimonials/testimonials-5.webp" class="testimonial-img flex-shrink-0"
+                        loading="lazy" decoding="async" alt="Testimonio cliente">
                       <div>
-                        <h3>John Larson</h3>
-                        <h4>Entrepreneur</h4>
+                        <h3>Alfredo</h3>
                         <div class="stars">
                           <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -1289,9 +1326,8 @@
                     </div>
                     <p>
                       <i class="bi bi-quote quote-icon-left"></i>
-                      <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam
-                        enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi
-                        cillum quid.</span>
+                      <span>La mejor óptica de Sevilla,profesionales del sector de gafas graduadas,de sol y lentes de
+                        contacto. Excelente relación calidad y precio.</span>
                       <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
@@ -1418,53 +1454,54 @@
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61586663273045&locale=es_ES" class="facebook" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook de Audioferia"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/opticacalleferia_136/"
+   class="instagram"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Instagram de Audioferia"><i class="bi bi-instagram"></i></a>
             <a href=""><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Páginas</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="primeros_signos.html">Primeros Signos</a></li>
+            <li><a href="tipos_audifonos.html">Tipos Audifonos</a></li>
+            <li><a href="localizacion-mapa.html">Localiza nuestro centro</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Inicio</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="/#about">Recupera tu audición</a></li>
+                <li><a href="/#services-2">Mejora tu audición</a></li>
+                <li><a href="/#faq">Preguntas frecuentes</a></li>
+                <li><a href="/#contact">Pide tu cita</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Primeros Signos</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
+            <li><a href="primeros_signos.html#services-2">Seis sintomas de la perdida auditiva</a></li>
+                <li><a href="primeros_signos.html#about">Escuchar bien vivir mejor</a></li>
+                <li><a href="primeros_signos.html#services">Grados de la perdida auditiva</a></li>
+                <li><a href="primeros_signos.html#faq">Preguntas frecuentes</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
+          <h4>Tipos Audífonos</h4>
           <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+            <li><a href="tipos_audifonos.html#audifonos-tipos">Intrauriculares (ITE)</a></li>
+                <li><a href="tipos_audifonos.html#audifonos-tipos">Auricular en canal (RIC)</a></li>
+                <li><a href="tipos_audifonos.html#audifonos-tipos">Retroauriculares (BTE)</a></li>
+                <li><a href="tipos_audifonos.html#faq">Preguntas frecuentes</a></li>
           </ul>
         </div>
 
