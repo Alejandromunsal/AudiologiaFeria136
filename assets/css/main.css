@@ -2069,291 +2069,6 @@ section,
 .gallery .gallery-item:hover img {
   transform: scale(1.1);
 }
-/* =========================
-   Pricing Table Premium Mejorada
-========================= */
-
-/* =========================
-   Pricing Table Premium Mejorada
-========================= */
-
-/* Card */
-#precios .card {
-  background-color: var(--surface-color);
-  border-radius: 2rem;
-  box-shadow: 0 2rem 3rem rgba(0,0,0,0.15);
-  padding: 2rem;
-  width: 80%;
-  margin: 0 auto;
-  transition: all 0.3s ease;
-}
-
-#precios .card-body {
-  overflow: hidden; /* ocultar scroll horizontal */
-}
-
-/* Wrapper tabla */
-#precios .pricing-table-wrapper {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Tabla */
-#precios .pricing-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  table-layout: auto;
-  font-family: var(--heading-font);
-  transition: all 0.3s ease;
-}
-
-#precios .pricing-table th:first-child,
-#precios .pricing-table td:first-child {
-  position: sticky;
-  left: 0;
-  background-color: var(--surface-color);
-  z-index: 2;
-  text-align: left;
-  font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1.25;
-  opacity: 0.8;
-  color: var(--default-color);
-}
-
-/* Columna activa escritorio */
-#precios .pricing-table td.active,
-#precios .pricing-table th.active {
-  background-color: var(--light-background);
-  color: var(--heading-color);
-  border-radius: 0.5rem;
-}
-
-/* Iconos */
-#precios .pricing-table i {
-  font-size: 0.95rem;
-  margin: 0 0.1rem;
-  vertical-align: middle;
-}
-
-#precios .pricing-table i.bi-star-fill,
-#precios .pricing-table i.bi-star {
-  color: #ffc107;
-}
-
-/* Notas al pie */
-#precios .nota-precio {
-  font-size: 0.85rem;
-  color: var(--default-color);
-  text-align: center;
-  margin-top: 1rem;
-}
-
-/* Contenido del precio en una sola línea */
-#precios .pricing-table td h2.precio,
-#precios .pricing-table td span.precio-small {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  color: var(--accent-color);
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-#precios .pricing-table td span.precio-small {
-  font-size: 0.6em;
-}
-
-/* =========================
-   Version Móvil y Tablet
-========================= */
-
-/* Transición columnas móviles */
-@media (max-width: 1199px) {
-  #precios .pricing-table th,
-  #precios .pricing-table td {
-    transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
-  }
-
-  #precios .pricing-table th:not(.mobile-active):not(:first-child),
-  #precios .pricing-table td:not(.mobile-active):not(:first-child) {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-
-  #precios .pricing-table th.mobile-active,
-  #precios .pricing-table td.mobile-active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Columnas ocultas por defecto móvil/tablet */
-@media (max-width: 1199px) {
-  #precios .pricing-table th,
-  #precios .pricing-table td {
-    display: none;
-  }
-
-  #precios .pricing-table th:first-child,
-  #precios .pricing-table td:first-child {
-    display: table-cell;
-  }
-
-  #precios .pricing-table td.mobile-active,
-  #precios .pricing-table th.mobile-active {
-    display: table-cell;
-  }
-
-  .precio-bullets {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  .precio-bullets button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .precio-bullets button.active {
-    background-color: var(--accent-color);
-  }
-}
-
-/* Ajustes responsive */
-@media (max-width: 1200px) {
-  #precios .card {
-    width: 95%;
-    padding: 0.5rem;
-  }
-
-  #precios .pricing-table i {
-    font-size: 0.8rem;
-  }
-}
-
-/* Ajuste móvil columnas 50/50 */
-@media (max-width: 768px) {
-  #precios .pricing-table th:first-child,
-  #precios .pricing-table td:first-child,
-  #precios .pricing-table th.mobile-active,
-  #precios .pricing-table td.mobile-active {
-    width: 50%;
-  }
-
-  #precios .pricing-table th:first-child,
-  #precios .pricing-table td:first-child {
-    font-size: 0.75rem;
-  }
-}
-
-/* Distribución tablet columnas */
-@media (min-width: 769px) and (max-width: 1199px) {
-  #precios .pricing-table th:first-child,
-  #precios .pricing-table td:first-child {
-    width: 33%;
-  }
-
-  #precios .pricing-table th.mobile-active,
-  #precios .pricing-table td.mobile-active {
-    width: 33%;
-  }
-
-  #precios .pricing-table {
-    width: 100%;
-  }
-}
-
-/* =========================
-   Animación Swipe Potente
-========================= */
-
-/* Flechas izquierda y derecha */
-.precio-swipe {
-  display: none; /* ocultas por defecto */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: rgba(0,0,0,0.3);
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0.7;
-  animation: pulseSwipe 1.2s infinite;
-  user-select: none;
-}
-
-/* Mostrar solo en pantallas <1200px */
-@media (max-width: 1199px) {
-  .precio-swipe {
-    display: block;
-  }
-
-  .precio-swipe.left {
-    left: 0; /* dentro de la card, a la izquierda de la tabla */
-  }
-
-  .precio-swipe.right {
-    right: 0; /* dentro de la card, a la derecha de la tabla */
-  }
-}
-
-/* Animación de pulso */
-@keyframes pulseSwipe {
-  0% { transform: translateY(-50%) scale(1); opacity: 0.5; }
-  50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
-  100% { transform: translateY(-50%) scale(1); opacity: 0.5; }
-}
-
-/* Contenedor relativo */
-#precios .pricing-table-wrapper {
-  overflow: hidden;
-  position: relative;
-}
-
-/* Transición columnas móviles */
-#precios .pricing-table td.mobile-active,
-#precios .pricing-table th.mobile-active {
-  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-}
-
-/* Animación combinada */
-#precios .pricing-table.swipe-anim-left td.mobile-active,
-#precios .pricing-table.swipe-anim-left th.mobile-active {
-  animation: swipeLeftAnim 0.6s ease forwards;
-}
-
-#precios .pricing-table.swipe-anim-right td.mobile-active,
-#precios .pricing-table.swipe-anim-right th.mobile-active {
-  animation: swipeRightAnim 0.6s ease forwards;
-}
-
-/* Keyframes swipe izquierda */
-@keyframes swipeLeftAnim {
-  0% { transform: translateX(0) scale(1); background-color: #ffd70033; }
-  25% { transform: translateX(-15px) scale(1.05); background-color: #ffd70088; }
-  50% { transform: translateX(5px) scale(1.02); background-color: #ffd70055; }
-  75% { transform: translateX(-5px) scale(1.03); background-color: #ffd70066; }
-  100% { transform: translateX(0) scale(1); background-color: var(--light-background); }
-}
-
-/* Keyframes swipe derecha */
-@keyframes swipeRightAnim {
-  0% { transform: translateX(0) scale(1); background-color: #ffd70033; }
-  25% { transform: translateX(15px) scale(1.05); background-color: #ffd70088; }
-  50% { transform: translateX(-5px) scale(1.02); background-color: #ffd70055; }
-  75% { transform: translateX(5px) scale(1.03); background-color: #ffd70066; }
-  100% { transform: translateX(0) scale(1); background-color: var(--light-background); }
-}
 
 /*--------------------------------------------------------------
 # Services-2 Section
@@ -2506,5 +2221,134 @@ section,
   .services-2 .service-item-wrapper {
     flex: 0 0 90%;
     max-width: 90%;
+  }
+}
+/* =========================
+   Pricing Table Premium Mejorada
+========================= */
+
+/* Card */
+#precios .card {
+  background-color: var(--surface-color);
+  border-radius: 2rem;
+  box-shadow: 0 2rem 3rem rgba(0,0,0,0.15);
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+#precios .card-body {
+  overflow: hidden;
+}
+
+/* Wrapper tabla */
+#precios .pricing-table-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Tabla */
+#precios .pricing-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  font-family: var(--heading-font);
+  transition: all 0.3s ease;
+}
+
+/* Columna activa escritorio */
+#precios .pricing-table td.active,
+#precios .pricing-table th.active {
+  background-color: var(--light-background);
+  color: var(--heading-color);
+  border-radius: 0.5rem;
+}
+
+/* Iconos */
+#precios .pricing-table i {
+  font-size: 0.95rem;
+  margin: 0 0.1rem;
+  vertical-align: middle;
+}
+
+#precios .pricing-table i.bi-star-fill,
+#precios .pricing-table i.bi-star {
+  color: #ffc107;
+}
+
+/* Notas al pie */
+#precios .nota-precio {
+  font-size: 0.85rem;
+  color: var(--default-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Contenido del precio en una sola línea */
+#precios .pricing-table td h2.precio,
+#precios .pricing-table td span.precio-small {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: var(--accent-color);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#precios .pricing-table td span.precio-small {
+  font-size: 0.6em;
+}
+
+/* =========================
+   Responsive - Scroll Horizontal Tablet/Móvil
+========================= */
+@media (max-width: 1199px) {
+  #precios .pricing-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #precios .pricing-table {
+    width: max-content;
+  }
+
+  #precios .pricing-table th,
+  #precios .pricing-table td {
+    white-space: nowrap;
+  }
+
+  /* Desactivar cualquier sticky */
+  #precios .pricing-table th:first-child,
+  #precios .pricing-table td:first-child {
+    position: static;
+    left: auto;
+  }
+
+  /* Ocultar swipe y bullets */
+  .precio-swipe,
+  .precio-bullets {
+    display: none !important;
+  }
+}
+
+/* Ajustes responsive */
+@media (max-width: 1200px) {
+  #precios .card {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  #precios .pricing-table i {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #precios .pricing-table th,
+  #precios .pricing-table td {
+    font-size: 0.75rem;
   }
 }
