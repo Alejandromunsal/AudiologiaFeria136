@@ -1743,38 +1743,6 @@ section,
     z-index: 2; /* encima del borde animado */
 }
 
-/* ===========================
-   Borde degradado animado icon-seo
-   =========================== */
-.calendar-card .icon-seo::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 120%;
-    border-radius: 50%;
-    background: conic-gradient(
-        from 0deg,
-        var(--accent-color),
-        var(--contrast-color),
-        var(--accent-color)
-    );
-    z-index: 1; /* detrás de la imagen */
-    opacity: 0; /* invisible por defecto */
-    transition: opacity 0.4s ease;
-    transform: translate(-50%, -50%); /* centra pseudo-elemento sobre icono */
-    animation: spin 3s linear infinite; /* animación continua */
-}
-
-.calendar-card:hover .icon-seo::before {
-    opacity: 1; /* aparece al hover */
-}
-
-@keyframes spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-}
 
 /* ===========================
    Texto centrado
@@ -2224,7 +2192,7 @@ section,
   }
 }
 /* =========================
-   Pricing Table Premium Mejorada
+   Pricing Table Premium
 ========================= */
 
 /* Card */
@@ -2242,32 +2210,30 @@ section,
   overflow: hidden;
 }
 
-/* Wrapper tabla */
+/* Wrapper */
 #precios .pricing-table-wrapper {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
-/* Tabla */
+/* Table */
 #precios .pricing-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   table-layout: auto;
   font-family: var(--heading-font);
-  transition: all 0.3s ease;
 }
 
-/* Columna activa escritorio */
+/* Active column (desktop) */
 #precios .pricing-table td.active,
 #precios .pricing-table th.active {
   background-color: var(--light-background);
   color: var(--heading-color);
-  border-radius: 0.5rem;
 }
 
-/* Iconos */
+/* Icons */
 #precios .pricing-table i {
   font-size: 0.95rem;
   margin: 0 0.1rem;
@@ -2279,15 +2245,7 @@ section,
   color: #ffc107;
 }
 
-/* Notas al pie */
-#precios .nota-precio {
-  font-size: 0.85rem;
-  color: var(--default-color);
-  text-align: center;
-  margin-top: 1rem;
-}
-
-/* Contenido del precio en una sola línea */
+/* Price */
 #precios .pricing-table td h2.precio,
 #precios .pricing-table td span.precio-small {
   display: inline;
@@ -2302,53 +2260,73 @@ section,
   font-size: 0.6em;
 }
 
+/* Footnote */
+#precios .nota-precio {
+  font-size: 0.85rem;
+  color: var(--default-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+.precio-swipe {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--accent-color);
+  cursor: pointer;
+  z-index: 10;
+  display: none; /* ocultas por defecto */
+  user-select: none;
+}
+
+.precio-swipe.left {
+  left: 5px;
+}
+
+.precio-swipe.right {
+  right: 5px;
+}
+
 /* =========================
-   Responsive - Scroll Horizontal Tablet/Móvil
+   Tablet + Mobile
 ========================= */
 @media (max-width: 1199px) {
+
+  /* Contenedor con scroll real */
   #precios .pricing-table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  #precios .pricing-table {
+  /* Tabla más ancha que la pantalla */
+  #precios table {
     width: max-content;
+    border-collapse: collapse;
   }
 
-  #precios .pricing-table th,
-  #precios .pricing-table td {
+  /* PRIMERA COLUMNA: permite salto de línea */
+  #precios table th:first-child,
+  #precios table td:first-child {
+    white-space: normal !important;
+    word-break: break-word;
+    min-width: 150px;
+    max-width: 180px;
+    font-size: 0.85rem; /* <- tamaño ligeramente menor */
+  }
+
+  /* RESTO DE COLUMNAS: no rompen línea */
+  #precios table th:not(:first-child),
+  #precios table td:not(:first-child) {
     white-space: nowrap;
-  }
-
-  /* Desactivar cualquier sticky */
-  #precios .pricing-table th:first-child,
-  #precios .pricing-table td:first-child {
-    position: static;
-    left: auto;
-  }
-
-  /* Ocultar swipe y bullets */
-  .precio-swipe,
-  .precio-bullets {
-    display: none !important;
+    min-width: 140px;
+        font-size: 0.95rem; /* tamaño normal */
   }
 }
 
-/* Ajustes responsive */
+/* Card spacing */
 @media (max-width: 1200px) {
   #precios .card {
     width: 95%;
     padding: 1rem;
-  }
-
-  #precios .pricing-table i {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  #precios .pricing-table th,
-  #precios .pricing-table td {
-    font-size: 0.75rem;
   }
 }
