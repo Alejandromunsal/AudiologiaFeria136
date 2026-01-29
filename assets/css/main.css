@@ -912,6 +912,81 @@ section,
 .section-title p {
   margin-bottom: 0;
 }
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item+.info-item {
+  margin-top: 40px;
+}
+
+.contact .info-item i {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .php-email-form {
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 36px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
 
 
 /* =========================
@@ -1258,185 +1333,6 @@ section,
   margin: 0;
   font-family: var(--heading-font);
   font-size: 16px;
-}
-
-/*--------------------------------------------------------------
-# Services-2 Section
---------------------------------------------------------------*/
-
-/* Image */
-.services-2 .img {
-  height: 220px; /* CLAVE */
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.services-2 .img img {
-  transition: 0.6s;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Details */
-.services-2 .details {
-  background: color-mix(in srgb, var(--surface-color), transparent 5%);
-  padding: 50px 30px;
-  margin: -40px 30px 0 30px;
-  transition: all ease-in-out 0.3s;
-  position: relative;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Icon */
-.services-2 .details .icon {
-  width: 72px;
-  height: 72px;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border: 6px solid var(--contrast-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  transition: ease-in-out 0.3s;
-  position: absolute;
-  top: -36px;
-  left: calc(50% - 36px);
-}
-
-/* Text */
-.services-2 .details h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-  transition: ease-in-out 0.3s;
-}
-
-.services-2 .details p {
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
-  line-height: 24px;
-  font-size: 17px;
-  margin-bottom: 0;
-}
-
-/* Hover */
-.services-2 .service-item:hover .details h3 {
-  color: var(--accent-color);
-}
-
-.services-2 .service-item:hover .details .icon {
-  background: var(--surface-color);
-  border: 2px solid var(--accent-color);
-}
-
-.services-2 .service-item:hover .details .icon i {
-  color: var(--accent-color);
-}
-
-.services-2 .service-item:hover .img img {
-  transform: scale(1.2);
-}
-
-/* Layout */
-.services-2 .services-2-items-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding-inline: 60px;
-}
-
-.services-2 .service-item-wrapper {
-  flex: 1 1 calc(33.333% - 40px);
-  max-width: calc(33.333% - 40px);
-  box-sizing: border-box;
-}
-
-/* Tablet */
-@media (max-width: 1200px) {
-  .services-2 .service-item-wrapper {
-    flex: 1 1 calc(50% - 30px);
-    max-width: calc(50% - 30px);
-  }
-}
-
-/* =========================
-   MOBILE – FLOAT CORREGIDO
-========================= */
-@media (max-width: 768px) {
-
-  .services-2 .services-2-items-container {
-    padding-inline: 0;
-    gap: 30px;
-  }
-
-  .services-2 .service-item-wrapper {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding-inline: 15px;
-  }
-
-  .services-2 .details {
-    margin: -30px 10px 0 10px;
-    padding: 30px 20px;
-    width: 100%;
-  }
-
-  .services-2 .details h3 {
-    font-size: 18px;
-    line-height: 1.3;
-    text-align: center;
-    word-break: break-word;
-    hyphens: auto;
-  }
-
-  .services-2 .details p {
-    font-size: 15px;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  .services-2 .details .icon {
-    width: 56px;
-    height: 56px;
-    font-size: 22px;
-    top: -28px;
-    left: calc(50% - 28px);
-    border-width: 4px;
-  }
-}
-
-/* Large desktop */
-@media (min-width: 1200px) {
-  .services-2 .services-2-items-container {
-    justify-content: center;
-    max-width: 1200px;
-    margin-inline: auto;
-  }
-}
-
-/* Button */
-.services-2 .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--cta-button-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 32px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px;
-  animation: fadeInUp 1s both 0.4s;
-}
-
-.services-2 .btn-get-started:hover {
-  background: color-mix(in srgb, var(--cta-button-color), transparent 20%);
 }
 
 /*--------------------------------------------------------------
@@ -2173,177 +2069,9 @@ section,
 .gallery .gallery-item:hover img {
   transform: scale(1.1);
 }
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 36px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-
-/*--------------------------------------------------------------
-# Features Section
---------------------------------------------------------------*/
-.features .nav-tabs {
-  border: 0;
-}
-
-.features .nav-link {
-  background-color: var(--surface-color);
-  color: var(--heading-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  padding: 15px 20px;
-  transition: 0.3s;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  height: 100%;
-}
-
-.features .nav-link i {
-  padding-right: 15px;
-  font-size: 48px;
-}
-
-.features .nav-link h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.features .nav-link:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.features .nav-link.active {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--accent-color);
-}
-
-.features .nav-link.active h4 {
-  color: var(--contrast-color);
-}
-
-@media (max-width: 768px) {
-  .features .nav-link i {
-    padding: 0;
-    line-height: 1;
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 575px) {
-  .features .nav-link {
-    padding: 15px;
-  }
-
-  .features .nav-link i {
-    font-size: 24px;
-  }
-}
-
-.features .tab-content {
-  margin-top: 30px;
-}
-
-.features .tab-pane h3 {
-  color: var(--heading-color);
-  font-weight: 700;
-  font-size: 26px;
-}
-
-.features .tab-pane ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features .tab-pane ul li {
-  padding-bottom: 10px;
-}
-
-.features .tab-pane ul i {
-  font-size: 20px;
-  padding-right: 4px;
-  color: var(--accent-color);
-}
-
-.features .tab-pane p:last-child {
-  margin-bottom: 0;
-}
-
+/* =========================
+   Pricing Table Premium Mejorada
+========================= */
 
 /* =========================
    Pricing Table Premium Mejorada
@@ -2355,17 +2083,20 @@ section,
   border-radius: 2rem;
   box-shadow: 0 2rem 3rem rgba(0,0,0,0.15);
   padding: 2rem;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   transition: all 0.3s ease;
 }
 
 #precios .card-body {
-  overflow-x: auto;
+  overflow: hidden; /* ocultar scroll horizontal */
 }
 
-/* Wrapper */
+/* Wrapper tabla */
 #precios .pricing-table-wrapper {
   width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Tabla */
@@ -2375,53 +2106,32 @@ section,
   border-spacing: 0;
   table-layout: auto;
   font-family: var(--heading-font);
+  transition: all 0.3s ease;
 }
 
-/* Celdas y encabezados */
-#precios .pricing-table th,
-#precios .pricing-table td {
-  text-align: center;
-  vertical-align: middle;
-  padding: 0.8rem;
-  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
-  background-color: transparent; /* importante: quitar gris de fondo de base */
-}
-
-/* Primera columna (descripción) */
 #precios .pricing-table th:first-child,
 #precios .pricing-table td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: var(--surface-color);
+  z-index: 2;
   text-align: left;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  opacity: 0.8;
   color: var(--default-color);
 }
 
-/* Columna activa predeterminada */
+/* Columna activa escritorio */
 #precios .pricing-table td.active,
 #precios .pricing-table th.active {
   background-color: var(--light-background);
   color: var(--heading-color);
   border-radius: 0.5rem;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
 }
 
-/* Columna hover */
-#precios .pricing-table td.hover-col,
-#precios .pricing-table th.hover-col {
-  background-color: var(--light-background) !important;
-  color: var(--heading-color) !important;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.18),
-              0 0 0.8rem rgba(255,255,255,0.25) inset;
-  transform: translateY(-1.5px);
-}
-
-/* Alternancia de filas eliminada para evitar “gris parpadeante” */
-#precios .pricing-table tbody tr:nth-child(even),
-#precios .pricing-table tbody tr:hover {
-  background-color: transparent !important;
-}
-
-/* Iconos más pequeños */
+/* Iconos */
 #precios .pricing-table i {
   font-size: 0.95rem;
   margin: 0 0.1rem;
@@ -2441,28 +2151,360 @@ section,
   margin-top: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
+/* Contenido del precio en una sola línea */
+#precios .pricing-table td h2.precio,
+#precios .pricing-table td span.precio-small {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: var(--accent-color);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#precios .pricing-table td span.precio-small {
+  font-size: 0.6em;
+}
+
+/* =========================
+   Version Móvil y Tablet
+========================= */
+
+/* Transición columnas móviles */
+@media (max-width: 1199px) {
   #precios .pricing-table th,
   #precios .pricing-table td {
-    font-size: 0.95rem;
-    padding: 0.6rem 0.4rem;
+    transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
   }
+
+  #precios .pricing-table th:not(.mobile-active):not(:first-child),
+  #precios .pricing-table td:not(.mobile-active):not(:first-child) {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  #precios .pricing-table th.mobile-active,
+  #precios .pricing-table td.mobile-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Columnas ocultas por defecto móvil/tablet */
+@media (max-width: 1199px) {
+  #precios .pricing-table th,
+  #precios .pricing-table td {
+    display: none;
+  }
+
+  #precios .pricing-table th:first-child,
+  #precios .pricing-table td:first-child {
+    display: table-cell;
+  }
+
+  #precios .pricing-table td.mobile-active,
+  #precios .pricing-table th.mobile-active {
+    display: table-cell;
+  }
+
+  .precio-bullets {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .precio-bullets button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .precio-bullets button.active {
+    background-color: var(--accent-color);
+  }
+}
+
+/* Ajustes responsive */
+@media (max-width: 1200px) {
+  #precios .card {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
   #precios .pricing-table i {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajuste móvil columnas 50/50 */
+@media (max-width: 768px) {
+  #precios .pricing-table th:first-child,
+  #precios .pricing-table td:first-child,
+  #precios .pricing-table th.mobile-active,
+  #precios .pricing-table td.mobile-active {
+    width: 50%;
+  }
+
+  #precios .pricing-table th:first-child,
+  #precios .pricing-table td:first-child {
+    font-size: 0.75rem;
+  }
+}
+
+/* Distribución tablet columnas */
+@media (min-width: 769px) and (max-width: 1199px) {
+  #precios .pricing-table th:first-child,
+  #precios .pricing-table td:first-child {
+    width: 33%;
+  }
+
+  #precios .pricing-table th.mobile-active,
+  #precios .pricing-table td.mobile-active {
+    width: 33%;
+  }
+
+  #precios .pricing-table {
+    width: 100%;
+  }
+}
+
+/* =========================
+   Animación Swipe Potente
+========================= */
+
+/* Flechas izquierda y derecha */
+.precio-swipe {
+  display: none; /* ocultas por defecto */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: rgba(0,0,0,0.3);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.7;
+  animation: pulseSwipe 1.2s infinite;
+  user-select: none;
+}
+
+/* Mostrar solo en pantallas <1200px */
+@media (max-width: 1199px) {
+  .precio-swipe {
+    display: block;
+  }
+
+  .precio-swipe.left {
+    left: 0; /* dentro de la card, a la izquierda de la tabla */
+  }
+
+  .precio-swipe.right {
+    right: 0; /* dentro de la card, a la derecha de la tabla */
+  }
+}
+
+/* Animación de pulso */
+@keyframes pulseSwipe {
+  0% { transform: translateY(-50%) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-50%) scale(1); opacity: 0.5; }
+}
+
+/* Contenedor relativo */
+#precios .pricing-table-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Transición columnas móviles */
+#precios .pricing-table td.mobile-active,
+#precios .pricing-table th.mobile-active {
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animación combinada */
+#precios .pricing-table.swipe-anim-left td.mobile-active,
+#precios .pricing-table.swipe-anim-left th.mobile-active {
+  animation: swipeLeftAnim 0.6s ease forwards;
+}
+
+#precios .pricing-table.swipe-anim-right td.mobile-active,
+#precios .pricing-table.swipe-anim-right th.mobile-active {
+  animation: swipeRightAnim 0.6s ease forwards;
+}
+
+/* Keyframes swipe izquierda */
+@keyframes swipeLeftAnim {
+  0% { transform: translateX(0) scale(1); background-color: #ffd70033; }
+  25% { transform: translateX(-15px) scale(1.05); background-color: #ffd70088; }
+  50% { transform: translateX(5px) scale(1.02); background-color: #ffd70055; }
+  75% { transform: translateX(-5px) scale(1.03); background-color: #ffd70066; }
+  100% { transform: translateX(0) scale(1); background-color: var(--light-background); }
+}
+
+/* Keyframes swipe derecha */
+@keyframes swipeRightAnim {
+  0% { transform: translateX(0) scale(1); background-color: #ffd70033; }
+  25% { transform: translateX(15px) scale(1.05); background-color: #ffd70088; }
+  50% { transform: translateX(-5px) scale(1.02); background-color: #ffd70055; }
+  75% { transform: translateX(5px) scale(1.03); background-color: #ffd70066; }
+  100% { transform: translateX(0) scale(1); background-color: var(--light-background); }
+}
+
+/*--------------------------------------------------------------
+# Services-2 Section
+--------------------------------------------------------------*/
+
+/* Contenedor padre: viewport */
+.services-2 .services-2-items-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* Items */
+.services-2 .service-item-wrapper {
+  flex: 0 0 33.3333%; /* Desktop: 3 visibles */
+  max-width: 33.3333%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* Item activo */
+.services-2 .service-item-wrapper.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Image */
+.services-2 .img {
+  height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.services-2 .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Details */
+.services-2 .details {
+  background: color-mix(in srgb, var(--surface-color), transparent 5%);
+  padding: 50px 30px;
+  margin: -40px 30px 0 30px;
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+}
+
+/* Icon */
+.services-2 .details .icon {
+  width: 72px;
+  height: 72px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 6px solid var(--contrast-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+  transition: all 0.5s ease;
+}
+
+/* Hover */
+.services-2 .service-item:hover .details h3 {
+  color: var(--accent-color);
+}
+
+.services-2 .service-item:hover .details .icon {
+  background: var(--surface-color);
+  border: 2px solid var(--accent-color);
+}
+
+.services-2 .service-item:hover .details .icon i {
+  color: var(--accent-color);
+}
+
+.services-2 .service-item:hover .img img {
+  transform: scale(1.1);
+}
+
+/* Flechas */
+.services-2-swipe {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.services-2-swipe:hover {
+  opacity: 1;
+}
+
+.services-2-swipe.left { left: 10px; }
+.services-2-swipe.right { right: 10px; }
+
+/* Bullets */
+.services-2-bullets {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.services-2-bullets button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: color-mix(in srgb, var(--default-color), transparent 70%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-2-bullets button.active {
+  background-color: var(--accent-color);
+}
+
+/* =========================
+   Tablet / Mobile
+========================= */
+@media (max-width: 1200px) {
+  .services-2 .service-item-wrapper {
+    flex: 0 0 80%;
+    max-width: 80%;
   }
 }
 
 @media (max-width: 768px) {
-  #precios .card {
-    width: 95%;
-  }
-  #precios .pricing-table th,
-  #precios .pricing-table td {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.2rem;
-  }
-  #precios .pricing-table i {
-    font-size: 0.8rem;
+  .services-2 .service-item-wrapper {
+    flex: 0 0 90%;
+    max-width: 90%;
   }
 }
