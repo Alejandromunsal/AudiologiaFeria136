@@ -1,33 +1,14 @@
-/*--------------------------------------------------------------
-# Services-2 Section
---------------------------------------------------------------*/
-
-/* Contenedor padre: viewport */
-.services-2 .services-2-items-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    position: relative;
-    scroll-behavior: smooth;
+/* Swiper Slide */
+.services-2-swiper .swiper-slide {
+    text-align: center;
   }
   
-  /* Items */
-  .services-2 .service-item-wrapper {
-    flex: 0 0 33.3333%; /* Desktop: 3 visibles */
-    max-width: 33.3333%;
-    box-sizing: border-box;
-    padding: 0 10px;
-    opacity: 0.4;
-    transform: scale(0.9);
+  /* Service Item */
+  .services-2 .service-item {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
     transition: all 0.5s ease;
-    pointer-events: none;
-  }
-  
-  /* Item activo */
-  .services-2 .service-item-wrapper.active {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
   }
   
   /* Image */
@@ -53,7 +34,6 @@
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 0 25px rgba(0,0,0,0.1);
-    transition: all 0.5s ease;
   }
   
   /* Icon */
@@ -75,81 +55,15 @@
   }
   
   /* Hover */
-  .services-2 .service-item:hover .details h3 {
-    color: var(--accent-color);
-  }
+  .services-2 .service-item:hover .details h3 { color: var(--accent-color); }
+  .services-2 .service-item:hover .details .icon { background: var(--surface-color); border: 2px solid var(--accent-color);}
+  .services-2 .service-item:hover .details .icon i { color: var(--accent-color); }
+  .services-2 .service-item:hover .img img { transform: scale(1.1); }
   
-  .services-2 .service-item:hover .details .icon {
-    background: var(--surface-color);
-    border: 2px solid var(--accent-color);
-  }
-  
-  .services-2 .service-item:hover .details .icon i {
-    color: var(--accent-color);
-  }
-  
-  .services-2 .service-item:hover .img img {
-    transform: scale(1.1);
-  }
-  
-  /* Flechas */
-  .services-2-swipe {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 10;
-    user-select: none;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-  
-  .services-2-swipe:hover {
-    opacity: 1;
-  }
-  
-  .services-2-swipe.left { left: 10px; }
-  .services-2-swipe.right { right: 10px; }
+
   
   /* Bullets */
-  .services-2-bullets {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-  
-  .services-2-bullets button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: color-mix(in srgb, var(--default-color), transparent 70%);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .services-2-bullets button.active {
-    background-color: var(--accent-color);
-  }
-  
-  /* =========================
-     Tablet / Mobile
-  ========================= */
-  @media (max-width: 1200px) {
-    .services-2 .service-item-wrapper {
-      flex: 0 0 80%;
-      max-width: 80%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .services-2 .service-item-wrapper {
-      flex: 0 0 90%;
-      max-width: 90%;
-    }
-  }
-  
+  .services-2-bullets { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+  .services-2-bullets .swiper-pagination-bullet { width: 12px; height: 12px; border-radius: 50%; background-color: color-mix(in srgb, var(--default-color), transparent 70%); opacity: 1; }
+  .services-2-bullets .swiper-pagination-bullet-active { background-color: var(--accent-color); }
   
