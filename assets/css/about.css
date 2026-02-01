@@ -4,53 +4,66 @@
 .about .content h3 {
     font-size: 2rem;
     font-weight: 700;
-  }
-  
-  .about .content ul {
+}
+
+.about .content ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .about .content ul li {
+}
+
+.about .content ul li {
     display: flex;
     align-items: flex-start;
     margin-top: 40px;
-  }
-  
-  .about .content ul i {
+}
+
+.about .content ul i {
     flex-shrink: 0;
     font-size: 48px;
     color: var(--accent-color);
     margin-right: 20px;
-  }
-  
-  .about .content ul h5 {
+}
+
+.about .content ul h5 {
     font-size: 18px;
     font-weight: 700;
-  }
-  
-  .about .content ul p {
+}
+
+.about .content p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about .content ul p {
     font-size: 15px;
-  }
-  
-  .about .content p:last-child {
+}
+
+.about .content p:last-child {
     margin-bottom: 0;
-  }
-  
-  .about .pulsating-play-btn {
+}
+
+.about .pulsating-play-btn {
     position: absolute;
     left: calc(50% - 47px);
     top: calc(50% - 47px);
-  }
-  
-  
-  .about .btn-get-started {
+}
+
+.about-btn-center {
+    text-align: center;
+    /* centra el botón */
+    margin-top: 24px;
+    /* separación del texto */
+}
+
+.about .btn-get-started {
     border: 2px solid var(--accent-color);
     font-family: var(--heading-font);
     font-weight: 500;
     display: inline-block;
-    color: var(--contrast-color);          /* texto blanco */
-    background-color: var(--accent-color); /* fondo accent color */
+    color: var(--contrast-color);
+    /* texto blanco */
+    background-color: var(--accent-color);
+    /* fondo accent color */
     font-size: 14px;
     padding: 10px 24px;
     border-radius: 12px;
@@ -58,23 +71,27 @@
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
-  }
-  
-  .about .btn-get-started:hover {
-    background-color: var(--light-background); /* fondo claro al pasar ratón */
-    color: var(--accent-color);               /* texto accent color */
+}
+
+.about .btn-get-started:hover {
+    background-color: var(--light-background);
+    /* fondo claro al pasar ratón */
+    color: var(--accent-color);
+    /* texto accent color */
     transform: translateY(-2px);
-  }
-  
-  
-  .about .btn-get-started-2 {
-    
+}
+
+
+.about .btn-get-started-2 {
+
     border: 2px solid var(--accent-color);
     font-family: var(--heading-font);
     font-weight: 500;
     display: inline-block;
-    color: var(--accent-color);          /* texto blanco */
-    background-color: var(--light-background); /* fondo accent color */
+    color: var(--accent-color);
+    /* texto blanco */
+    background-color: var(--light-background);
+    /* fondo accent color */
     font-size: 14px;
     padding: 10px 24px;
     border-radius: 12px;
@@ -82,37 +99,119 @@
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
-  }
-  
-  .about .btn-get-started-2:hover {
+}
+
+.about .btn-get-started-2:hover {
     background-color: color-mix(in srgb, var(--accent-color, #007bff), #000 10%);
-    color: #fff; /* cambiar el texto a blanco para resaltar */
-  
-    transform: translateY(-2px); /* mismo efecto hover que el CTA */}
-    
-    
-    @keyframes fadeInUp {
+    color: #fff;
+    /* cambiar el texto a blanco para resaltar */
+
+    transform: translateY(-2px);
+    /* mismo efecto hover que el CTA */
+}
+
+
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
     }
-  
+
     to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/*--------------------------------------------------------------
+# About responsive fix (imagen + contenido centrados)
+--------------------------------------------------------------*/
+@media (max-width: 991px) {
+    .about .about-image-card {
+        margin: 0 auto;
+      }
+    /* Centrar la imagen cuando las columnas se apilan */
+    .about .col-lg-6 picture,
+    .about .col-lg-6 img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Centrar texto solo en mobile / tablet */
+    .about .content {
+        text-align: center;
+    }
+
+    /* Centrar el botón manteniendo inline-block */
+    .about .btn-get-started-2 {
+        display: inline-block;
+        margin: 20px auto 0;
+    }
+
+    .about .about-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .about .content p {
+        text-align: left;
+    }
+}
+
+/* ===========================
+   About Card (mismo diseño que calendar-card)
+   =========================== */
+.about .about-card {
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    padding: 40px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover premium */
+.about .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========================
+   About image card (full bleed)
+   =========================== */
+   .about .about-image-card {
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    border-radius: 12px;
+    overflow: hidden; /* CLAVE: recorta la imagen */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
   }
   
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translate3d(0, -100%, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
+  /* Hover sutil */
+  .about .about-image-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   }
   
+  /* Imagen ocupa toda la card */
+  .about .about-image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
   

@@ -14,8 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
       type: 'bullets',
       clickable: true,
       renderBullet: function (index, className) {
-        // Para escritorio limitamos bullets a los necesarios
-        if (window.innerWidth >= 1200 && index >= 3) return '';
+        const totalSlides = document.querySelectorAll('.services-2-swiper .swiper-slide').length;
+
+        if (window.innerWidth >= 1200) {
+          // Escritorio: bullets por grupo de 3 slides consecutivos
+          const bulletsCount = totalSlides - 2; // 123, 234, 345, ...
+          if (index >= bulletsCount) return ''; // Oculta bullets sobrantes
+        } else {
+          // Tablet/Móvil: un bullet por slide
+          // No hacemos nada, todos los index son válidos
+        }
+
         return `<span class="${className}"></span>`;
       }
     },
@@ -33,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let autoplayInterval = null;
 
   const startAutoplay = () => {
-    stopAutoplay(); // limpiar por si acaso
+    stopAutoplay();
     autoplayInterval = setInterval(() => {
       const totalSlides = swiper.slides.length;
       const slidesPerView = swiper.params.slidesPerView;
@@ -50,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (autoplayInterval) clearInterval(autoplayInterval);
   };
 
-  // Iniciar autoplay al cargar
   startAutoplay();
 
   // Pausar/reanudar al pasar ratón sobre slides
