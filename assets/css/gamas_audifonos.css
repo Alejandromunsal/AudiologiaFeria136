@@ -1,0 +1,83 @@
+/*--------------------------------------------------------------
+# Departments Section
+--------------------------------------------------------------*/
+.gamas {
+    overflow: hidden;
+  }
+  /* Espacio entre nav-tabs y tab-content */
+.gamas .nav-tabs {
+    margin-bottom: 30px; /* Ajusta el valor según necesites */
+    border: 0;
+    gap: 12px;             /* espacio ENTRE los items */
+
+}
+
+.gamas .nav-tabs .nav-link {
+    height: 92px;                 /* altura fija (ajústala a tu gusto) */
+    display: flex;
+    align-items: center;          /* centra verticalmente */
+    justify-content: center;      /* centra horizontalmente */
+    line-height: 1.2;             /* evita alturas raras */
+    
+}
+
+  .gamas .nav-tabs .nav-link {
+    border: 2px solid var(--accent-color);
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: var(--accent-color);          /* texto blanco */
+    background-color: var(--light-background); /* fondo accent color */
+    font-size: 24px;
+    padding: 10px 24px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gamas .nav-tabs .nav-link:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+  
+  .gamas .nav-tabs .nav-link.active {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+  
+  .gamas .tab-pane.active {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .gamas .details h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .gamas .details p {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+  }
+  
+  .gamas .details p:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 992px) {
+    .gamas .nav-link {
+      border: 0;
+      padding: 15px;
+    }
+  
+    .gamas .nav-link.active {
+      color: var(--accent-color);
+      background: var(--accent-color);
+    }
+  }
+  @media (min-width: 992px) {
+    .gamas .nav-tabs {
+      border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
+      border-bottom: 0;
+    }
+  }
+  
