@@ -2,53 +2,61 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Si no tienes autoload de Composer, incluye PHPMailer manualmente
+// PHPMailer manual (si no usas Composer)
 require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 require '../vendor/phpmailer/phpmailer/src/Exception.php';
 
-// Recoger datos del formulario de manera segura
-$name = $_POST['name'] ?? '';
-$email = $_POST['email'] ?? '';
-$telephone = $_POST['telephone'] ?? '';
-$subject = $_POST['subject'] ?? 'Nuevo mensaje desde formulario';
-$message = $_POST['message'] ?? '';
-
-// Validación básica
-if(empty($name) || empty($email) || empty($message)) {
-    echo 'Por favor rellena todos los campos requeridos.';
-    exit;
+// Solo permitir POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Método no permitido');
 }
 
+// Recoger y limpiar datos
+$name      = trim($_POST['name'] ?? '');
+$email     = trim($_POST['email'] ?? '');
+$telephone = trim($_POST['telephone'] ?? '');
+$subject   = trim($_POST['subject'] ?? 'Nuevo mensaje desde formulario');
+$message   = trim($_POST['message'] ?? '');
+
+// Validación básica
+if ($name === '' || $email === '' || $message === '') {
+    exit('Por favor rellena todos los campos requeridos.');
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    exit('Email no válido.');
+}
+
+// Crear PHPMailer
 $mail = new PHPMailer(true);
 
 try {
-    // Configuración básica
     $mail->CharSet = 'UTF-8';
     $mail->Encoding = 'base64';
-    
-    // SMTP Gmail
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'audioferia@gmail.com'; // tu Gmail
-    $mail->Password = 'jghlzkvzjdkugwjw';     // contraseña de aplicación
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
 
-    // Remitente oficial (Gmail) para evitar spam
+    // Configuración SMTP usando variables de entorno
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = getenv('SMTP_USER'); // tu Gmail desde variable de entorno
+    $mail->Password   = getenv('SMTP_PASS'); // contraseña de aplicación desde variable de entorno
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
+
+    // Remitente oficial
     $mail->setFrom($mail->Username, 'AudioFeria136');
 
-    // Destinatario principal (tú)
+    // Destinatario principal
     $mail->addAddress('audioferia@gmail.com');
 
     // Reply-To: cliente
     $mail->addReplyTo($email, $name);
 
-    // Copia al cliente
-    $mail->addCC($email);
+    // Opcional: quitar CC al cliente para evitar spam
+    // $mail->addCC($email); // <-- normalmente no es recomendable
 
-    // Asunto
     $mail->Subject = $subject;
 
     // Logo embebido
@@ -89,11 +97,12 @@ try {
     $mail->isHTML(true);
     $mail->Body = $body;
 
-    // Enviar
+    // Enviar correo
     $mail->send();
     echo 'OK';
 
 } catch (Exception $e) {
+    http_response_code(500);
     echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
 }
 ?>
