@@ -40,11 +40,12 @@ try {
     // Configuración SMTP usando variables de entorno
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = getenv('SMTP_USER'); // tu Gmail desde variable de entorno
-    $mail->Password   = getenv('SMTP_PASS'); // contraseña de aplicación desde variable de entorno
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
-
+    $env = parse_ini_file('/var/www/config/.env');
+    $mail->Username = $env['SMTP_USER'];
+    $mail->Password = $env['SMTP_PASS'];
+    
     // Remitente oficial
     $mail->setFrom($mail->Username, 'AudioFeria136');
 
