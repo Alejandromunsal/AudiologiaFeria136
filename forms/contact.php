@@ -31,8 +31,8 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'alendi1986@gmail.com'; // tu Gmail
-    $mail->Password = 'hzzhkhNjvneqjxwh';     // contraseña de aplicación
+    $mail->Username = 'audioferia@gmail.com'; // tu Gmail
+    $mail->Password = 'jghlzkvzjdkugwjw';     // contraseña de aplicación
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
@@ -40,7 +40,7 @@ try {
     $mail->setFrom($mail->Username, 'AudioFeria136');
 
     // Destinatario principal (tú)
-    $mail->addAddress('alendi1986@gmail.com');
+    $mail->addAddress('audioferia@gmail.com');
 
     // Reply-To: cliente
     $mail->addReplyTo($email, $name);
