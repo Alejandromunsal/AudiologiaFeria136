@@ -1,0 +1,112 @@
+/* ===========================
+   Cards de audífonos
+=========================== */
+.audifonos-tipos .audifono-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra imagen, texto y botón */
+    text-align: center;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .audifonos-tipos .audifono-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Imagen */
+  .audifonos-tipos .audifono-img {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centra imagen horizontalmente */
+    overflow: hidden;
+  }
+  
+  .audifonos-tipos .audifono-img img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+  }
+  
+  .audifonos-tipos .audifono-card:hover .audifono-img img {
+    transform: scale(1.05);
+  }
+  
+  /* Contenido */
+  .audifonos-tipos .audifono-content {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra todo */
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .audifonos-tipos h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #222;
+  }
+  
+  .audifonos-tipos .audifono-subtitle {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .audifonos-tipos .audifono-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón centrado */
+  .audifonos-tipos .btn-open-modal {
+    display: inline-block;
+    margin: 0 auto; /* centro horizontal */
+    padding: 10px 24px;
+    font-size: 14px;
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .audifonos-tipos .btn-open-modal:hover {
+    background-color: color-mix(in srgb, var(--accent-color, #007bff), #000 10%);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .audifonos-tipos .audifono-img {
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .audifonos-tipos .audifono-img {
+      height: 180px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .audifonos-tipos .audifono-img {
+      height: 140px;
+    }
+  }
+  
