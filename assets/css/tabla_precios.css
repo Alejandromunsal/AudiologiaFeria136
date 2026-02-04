@@ -8,8 +8,9 @@
   padding: 40px;
   margin: 0 auto;
   box-sizing: border-box;
-  width: 100%;
-  max-width: 1140px; /* Igual que about-card */
+  max-width: none;
+  padding-left: clamp(1rem, 4vw, 4rem);
+  padding-right: clamp(1rem, 4vw, 4rem);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   transition: all 0.3s ease-in-out;
 }
