@@ -4,6 +4,30 @@
 .gamas {
     overflow: hidden;
   }
+.gamas p{
+    font-size: 18px;
+    text-align: justify;
+
+}
+  /* Hacer que el row sea referencia de altura */
+.gamas .tab-pane .row {
+    align-items: stretch;
+  }
+  
+  /* Columna de la imagen */
+  .gamas .tab-pane .col-lg-4 {
+    display: flex;
+  }
+  
+  /* Imagen ocupando todo el alto del row */
+  .gamas .tab-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* recorta sin deformar */
+    border-radius: 12px; /* opcional, queda elegante */
+  }
+  
+  
   /* Espacio entre nav-tabs y tab-content */
 .gamas .nav-tabs {
     margin-bottom: 30px; /* Ajusta el valor según necesites */
@@ -55,6 +79,27 @@
     margin-bottom: 20px;
   }
   
+  .gamas .btn-get-started {
+    border: 2px solid var(--accent-color);
+    font-family: var(--heading-font);
+    font-weight: 500;
+    display: inline-block;
+    color: var(--contrast-color);          /* texto blanco */
+    background-color: var(--accent-color); /* fondo accent color */
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gamas .btn-get-started:hover {
+    background-color: var(--light-background); /* fondo claro al pasar ratón */
+    color: var(--accent-color);               /* texto accent color */
+    transform: translateY(-2px);
+  }
   .gamas .details p {
     color: color-mix(in srgb, var(--default-color), transparent 20%);
   }
@@ -80,4 +125,11 @@
       border-bottom: 0;
     }
   }
+  @media (max-width: 992px) {
+    .gamas .tab-pane img {
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  
   
