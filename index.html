@@ -38,7 +38,10 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
   <!-- Preload main CSS para LCP -->
+
+
   <link rel="preload" href="/assets/css/main.css?v=20260204" as="style">
   <link href="/assets/css/main.css?v=20260204" rel="stylesheet">
   <link rel="preload" href="/assets/css/gamas_audifonos.css?v=20260204" as="style">
@@ -77,11 +80,29 @@
   <meta name="theme-color" content="#0a3cff">
 
 
+  <!-- Animate.css para animaciones suaves -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Google Consent Mode base -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+
+
   <!-- =======================================================
   * Updated: Jan 29 2026 with Bootstrap v5.3.3
   * Author: Alejandrom Muñoz Salas
   ======================================================== -->
 </head>
+
 
 <body class="index-page">
 
@@ -139,7 +160,8 @@
                 <li><a href="/primeros_signos.html#faq">Preguntas frecuentes</a></li>
                 <li><a href="/primeros_signos.html#testimonials">Opiniones de nuestros clientes</a></li>
                 <li><a href="/primeros_signos.html#contact">Pide tu cita</a></li>
-                <li><a href="/primeros_signos.html#contact">Localiza nuestro centro</a></li>              </ul>
+                <li><a href="/primeros_signos.html#contact">Localiza nuestro centro</a></li>
+              </ul>
             </li>
             <li class="dropdown"><a href="tipos_audifonos.html"><span>Tipos de audífonos</span> <i
                   class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -151,7 +173,8 @@
                 <li><a href="/tipos_audifonos.html#faq">Preguntas frecuentes</a></li>
                 <li><a href="/tipos_audifonos.html#testimonials">Opiniones de nuestros clientes</a></li>
                 <li><a href="/tipos_audifonos.html#contact">Pide tu cita</a></li>
-                <li><a href="/tipos_audifonos.html#contact">Localiza nuestro centro</a></li>              </ul>
+                <li><a href="/tipos_audifonos.html#contact">Localiza nuestro centro</a></li>
+              </ul>
             </li>
             <li><a href="#contact">Contacto</a></li>
           </ul>
@@ -423,8 +446,7 @@
               <div class="swiper-slide">
                 <div class="service-item">
                   <div class="img">
-                    <img src="assets/img/services-2/istockphoto-1400617723-612x612.jpg"
-                      alt="Planes de financiación">
+                    <img src="assets/img/services-2/istockphoto-1400617723-612x612.jpg" alt="Planes de financiación">
                   </div>
                   <div class="details">
                     <div class="icon"><i class="bi bi-easel"></i></div>
@@ -515,7 +537,7 @@
         <p>El precio de los audífonos no debería ser una barrera para volver a oír bien. En AudioFeria Centro Auditivo
           creemos que una buena audición tiene que estar al alcance de todos. Por eso trabajamos con programas de
           audición flexibles, que incluyen los audífonos, su adaptación personalizada, el seguimiento audiológico y el
-          mantenimiento necesario para que disfrutes de la mejor experiencia auditiva desde el primer día. Conoce más sobre nuestros programas <a href="/tipos_audifonos.html">aquí.</a></p>
+          mantenimiento necesario para que disfrutes de la mejor experiencia auditiva desde el primer día.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -543,10 +565,13 @@
               <div class="tab-pane active show" id="gamas-tab-1">
                 <div class="row">
                   <div class="col-lg-6 details order-1 order-lg-1">
-                    <h3>Gama Alta <br>(desde 33€/mes)</h3>
-                    <span>30 mensualidades </span>
+                    <p>
+                      <small style="color: var(--accent-color);">desde </small>
+                      <strong style="font-size: 4em; color: var(--accent-color);">33€</strong>
+                      <small style="color: var(--accent-color);">/mes*</small>
+                    </p>
 
-                    <p><br>Una solución eficaz y fiable para mejorar la audición y volver a disfrutar de
+                    <p>Una solución eficaz y fiable para mejorar la audición y volver a disfrutar de
                       conversaciones, televisión y sonidos cotidianos.</p>
                     <p>Estos audífonos ofrecen un equilibrio ideal entre rendimiento y simplicidad, proporcionando una
                       audición clara y cómoda en las situaciones más habituales. Son una opción práctica y accesible
@@ -562,9 +587,12 @@
               <div class="tab-pane" id="gamas-tab-2">
                 <div class="row">
                   <div class="col-lg-6 details order-1 order-lg-1">
-                    <h3>Gama Alta Recargable <br>(desde 48€/mes)</h3>
-                    <span>30 mensualidades </span>
-                    <p><br>Comodidad sin pilas, fáciles de usar y con una excelente calidad de sonido para tu día a día.
+                    <p>
+                      <small style="color: var(--accent-color);">desde </small>
+                      <strong style="font-size: 4em; color: var(--accent-color);">48€</strong>
+                      <small style="color: var(--accent-color);">/mes*</small>
+                    </p>
+                    <p>Comodidad sin pilas, fáciles de usar y con una excelente calidad de sonido para tu día a día.
                     </p>
                     <p>Gracias a su sistema recargable, estos audífonos eliminan la necesidad de cambiar pilas,
                       ofreciendo mayor autonomía y una experiencia más cómoda y sostenible. Su manejo sencillo y su
@@ -580,9 +608,12 @@
               <div class="tab-pane" id="gamas-tab-3">
                 <div class="row">
                   <div class="col-lg-6 details order-1 order-lg-1">
-                    <h3>Gama Premium <br>(desde 74€/mes)</h3>
-                    <span>30 mensualidades </span>
-                    <p><br>Mayor nitidez, mejor comprensión del habla y tecnología inteligente que se adapta a
+                    <p>
+                      <small style="color: var(--accent-color);">desde </small>
+                      <strong style="font-size: 4em; color: var(--accent-color);">74€</strong>
+                      <small style="color: var(--accent-color);">/mes*</small>
+                    </p>
+                    <p>Mayor nitidez, mejor comprensión del habla y tecnología inteligente que se adapta a
                       diferentes entornos sonoros.</p>
                     <p>Además, su diseño discreto y ergonómico garantiza una adaptación perfecta al oído, ofreciendo
                       máxima comodidad incluso tras un uso prolongado. Todo ello se combina con una gestión eficiente de
@@ -598,9 +629,12 @@
               <div class="tab-pane" id="gamas-tab-4">
                 <div class="row">
                   <div class="col-lg-6 details order-1 order-lg-1">
-                    <h3>Gama Última Generación <br>(desde 92€/mes)</h3>
-                    <span>30 mensualidades </span>
-                    <p><br>La máxima innovación en audición: precisión, confort y una experiencia auditiva natural
+                    <p>
+                      <small style="color: var(--accent-color);">desde </small>
+                      <strong style="font-size: 4em; color: var(--accent-color);">92€</strong>
+                      <small style="color: var(--accent-color);">/mes*</small>
+                    </p>
+                    <p>La máxima innovación en audición: precisión, confort y una experiencia auditiva natural
                       incluso en ambientes ruidosos.</p>
                     <p>Gracias a sus funciones inteligentes, estos audífonos se adaptan automáticamente a cada
                       situación sonora, optimizando la comprensión del habla y reduciendo el ruido de fondo. Así, podrás
@@ -614,7 +648,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div><span style="text-align: center;">* Financiación sujeta a aprobacion de la entidad financiera. Pago en
+            30 mensualidades. Sin
+            Intereses, sin comisión de apertura y sin gastos adicionales.</span>
         </div>
       </div>
 
@@ -1096,6 +1132,8 @@
             <li><a href="primeros_signos.html">Primeros Signos</a></li>
             <li><a href="tipos_audifonos.html">Tipos Audifonos</a></li>
             <li><a href="localizacion-mapa.html">Localiza nuestro centro</a></li>
+            <li><a href="politica_de_privacidad.html">Política de Privacidad</a></li>
+            <li><a href="politica_de_cookies.html">Política de Cookies</a></li>
           </ul>
         </div>
 
@@ -1103,11 +1141,11 @@
           <h4>Inicio</h4>
           <ul>
             <li><a href="/#about">Recupera tu audición</a></li>
-                <li><a href="/#services-2">Mejora tu audición</a></li>
-                <li><a href="/#faq">Preguntas frecuentes</a></li>
-                <li><a href="/#testimonials">Opiniones de nuestros clientes</a></li>
-                <li><a href="/#contact">Pide tu cita</a></li>
-                <li><a href="/#contact">Localiza nuestro centro</a></li>
+            <li><a href="/#services-2">Mejora tu audición</a></li>
+            <li><a href="/#faq">Preguntas frecuentes</a></li>
+            <li><a href="/#testimonials">Opiniones de nuestros clientes</a></li>
+            <li><a href="/#contact">Pide tu cita</a></li>
+            <li><a href="/#contact">Localiza nuestro centro</a></li>
           </ul>
         </div>
 
@@ -1115,27 +1153,29 @@
           <h4>Primeros Signos</h4>
           <ul>
             <li><a href="/primeros_signos.html#services-2">Seis sintomas de la perdida auditiva</a></li>
-                <li><a href="/primeros_signos.html#about">Escuchar bien vivir mejor</a></li>
-                <li><a href="/primeros_signos.html#services">Grados de la perdida auditiva</a></li>
-                <li><a href="/primeros_signos.html#faq">Preguntas frecuentes</a></li>
-                <li><a href="/primeros_signos.html#testimonials">Opiniones de nuestros clientes</a></li>
-                <li><a href="/primeros_signos.html#contact">Pide tu cita</a></li>
-                <li><a href="/primeros_signos.html#contact">Localiza nuestro centro</a></li>              </ul>
-            </ul>
+            <li><a href="/primeros_signos.html#about">Escuchar bien vivir mejor</a></li>
+            <li><a href="/primeros_signos.html#services">Grados de la perdida auditiva</a></li>
+            <li><a href="/primeros_signos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="/primeros_signos.html#testimonials">Opiniones de nuestros clientes</a></li>
+            <li><a href="/primeros_signos.html#contact">Pide tu cita</a></li>
+            <li><a href="/primeros_signos.html#contact">Localiza nuestro centro</a></li>
+          </ul>
+          </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Tipos Audífonos</h4>
           <ul>
             <li><a href="/tipos_audifonos.html#audifonos-tipos">Tipos de audífonos</a></li>
-                <li><a href="/tipos_audifonos.html#gamas">Nuestros progamas de audición</a></li>
-                <li><a href="/tipos_audifonos.html#precios">¿Cuánto cuestan nuestros audífonos?</a></li>
-                <li><a href="/tipos_audifonos.html#stats">Incluido en todos nuestros programas</a></li>
-                <li><a href="/tipos_audifonos.html#faq">Preguntas frecuentes</a></li>
-                <li><a href="/tipos_audifonos.html#testimonials">Opiniones de nuestros clientes</a></li>
-                <li><a href="/tipos_audifonos.html#contact">Pide tu cita</a></li>
-                <li><a href="/tipos_audifonos.html#contact">Localiza nuestro centro</a></li>              </ul>
-            </ul>
+            <li><a href="/tipos_audifonos.html#gamas">Nuestros progamas de audición</a></li>
+            <li><a href="/tipos_audifonos.html#precios">¿Cuánto cuestan nuestros audífonos?</a></li>
+            <li><a href="/tipos_audifonos.html#stats">Incluido en todos nuestros programas</a></li>
+            <li><a href="/tipos_audifonos.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="/tipos_audifonos.html#testimonials">Opiniones de nuestros clientes</a></li>
+            <li><a href="/tipos_audifonos.html#contact">Pide tu cita</a></li>
+            <li><a href="/tipos_audifonos.html#contact">Localiza nuestro centro</a></li>
+          </ul>
+          </ul>
         </div>
 
       </div>
@@ -1151,9 +1191,96 @@
 
   </footer>
 
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
+
+
+<!-- ===================== BANNER DE COOKIES ===================== -->
+<div id="cookieBanner" class="position-fixed bottom-0 start-0 w-100 bg-light border-top shadow d-none"
+     style="z-index:1055;">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 gap-md-3 py-3 px-3"
+       style="max-width: 900px; margin: 0 auto;">
+    <div class="text-dark mb-2 mb-md-0 text-center text-md-start">
+      En <strong>Audioferia.es</strong> utilizamos cookies propias y de terceros con fines técnicos, analíticos y de marketing.
+      Puedes aceptar todas las cookies, rechazarlas o configurarlas.
+    </div>
+
+    <div class="d-flex flex-wrap flex-md-nowrap gap-2 justify-content-center">
+      <button class="btn btn-outline-secondary btn-sm" onclick="rejectAll()">Rechazar</button>
+      <button class="btn btn-outline-secondary btn-sm" onclick="openConfig()">Configurar</button>
+      <button class="btn btn-primary btn-sm" style="background: var(--accent-color); border:none;" onclick="acceptAll()">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PANEL DE CONFIGURACIÓN ===================== -->
+<div id="cookieConfig" class="position-fixed bottom-0 start-0 w-100 bg-white border-top shadow d-none"
+     style="z-index:1056;">
+  <div class="container d-flex flex-column align-items-center text-center gap-3 py-3 px-3" style="max-width: 900px; margin: 0 auto;">
+
+    <!-- Texto y checkboxes centrados -->
+    <div class="w-100" style="max-width: 500px;">
+      <h6 class="mb-2">Configuración de cookies</h6>
+      <p class="small text-muted mb-3">Puedes permitir o rechazar las cookies según su finalidad.</p>
+
+      <div class="form-check mb-2 text-start">
+        <input class="form-check-input" type="checkbox" checked disabled id="necessaryCookies">
+        <label class="form-check-label fw-bold" for="necessaryCookies">
+          Cookies técnicas necesarias (obligatorias)
+        </label>
+        <div class="small text-muted ms-3">Permiten el correcto funcionamiento del sitio y no se pueden desactivar.</div>
+      </div>
+
+      <div class="form-check mb-2 text-start">
+        <input class="form-check-input border border-3 border-primary" type="checkbox" id="analyticsCookies">
+        <label class="form-check-label fw-bold" for="analyticsCookies">
+          Cookies analíticas (Google Analytics)
+        </label>
+        <div class="small text-muted ms-3">Ayudan a entender cómo interactúan los usuarios con la web para mejorar la experiencia.</div>
+      </div>
+
+      <div class="form-check mb-2 text-start">
+        <input class="form-check-input border border-3 border-primary" type="checkbox" id="marketingCookies">
+        <label class="form-check-label fw-bold" for="marketingCookies">
+          Cookies de marketing (publicidad y redes sociales)
+        </label>
+        <div class="small text-muted ms-3">Permiten mostrar publicidad relevante y medir la efectividad de campañas externas.</div>
+      </div>
+
+      <div class="form-check mb-3 text-start">
+        <input class="form-check-input border border-3 border-primary" type="checkbox" id="securityCookies">
+        <label class="form-check-label fw-bold" for="securityCookies">
+          Cookies de seguridad
+        </label>
+        <div class="small text-muted ms-3">Ayudan a proteger tu información y detectar accesos no autorizados.</div>
+      </div>
+
+      <!-- Enlaces en una sola línea -->
+      <div class="d-flex justify-content-center gap-2 small">
+        <a href="/politica_de_cookies.html" class="text-decoration-underline" style="color: var(--accent-color);">
+          Política de cookies
+        </a>
+        <span class="text-muted">|</span>
+        <a href="/politica_de_privacidad.html" class="text-decoration-underline" style="color: var(--accent-color);">
+          Política de privacidad
+        </a>
+      </div>
+    </div>
+
+    <!-- Botones centrados -->
+    <div class="d-flex gap-2 justify-content-center flex-wrap">
+      <button class="btn btn-outline-secondary btn-sm" onclick="cancelConfig()">Cancelar</button>
+      <button class="btn btn-primary btn-sm" style="background: var(--accent-color); border:none;" onclick="saveConfig()">Guardar preferencias</button>
+    </div>
+
+  </div>
+</div>
+
+  <!-- ===================== JS EXTERNO ===================== -->
+  <script src="assets/js/cookie-consent.js" defer></script>
+
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1174,6 +1301,7 @@
 
   <!-- services-2 JS File -->
   <script src="assets/js/services-2.js?v=20260204" defer></script>
+
 
 
 </body>
