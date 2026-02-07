@@ -76,6 +76,21 @@
     <meta name="msapplication-TileColor" content="#0a3cff">
     <meta name="theme-color" content="#0a3cff">
 
+    <!-- Animate.css para animaciones suaves -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Google Consent Mode base -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+        });
+    </script>
 
     <!-- =======================================================
   * Updated: Jan 29 2026 with Bootstrap v5.3.3
@@ -131,6 +146,8 @@
                                 <li><a href="/#testimonials">Opiniones de nuestros clientes</a></li>
                                 <li><a href="/#contact">Pide tu cita</a></li>
                                 <li><a href="/#contact">Localiza nuestro centro</a></li>
+                                <li><a href="/politica_de_cookies.html">Política de cookies</a></li>
+                <li><a href="/politica_de_privacidad.html">Política de privacidad</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="primeros_signos.html"><span>Perdida auditiva</span> <i
@@ -159,7 +176,7 @@
                                 <li><a href="/tipos_audifonos.html#contact">Localiza nuestro centro</a></li>
                             </ul>
                         </li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="/localizacion-mapa.html">Contacto</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
@@ -188,7 +205,8 @@
                     <br>En Audioferia.es, nos comprometemos a proteger la privacidad y los datos personales de nuestros
                     usuarios. Esta Política de Privacidad explica qué datos recogemos, cómo los usamos, cómo los
                     protegemos y los derechos que tienen los usuarios según la Ley Orgánica de Protección de Datos y
-                    Garantía de Derechos Digitales (LOPDGDD) y el Reglamento General de Protección de Datos (RGPD).</p><br>
+                    Garantía de Derechos Digitales (LOPDGDD) y el Reglamento General de Protección de Datos (RGPD).
+                </p><br>
 
                 <h3>1. Responsable del tratamiento</h3>
 
@@ -350,6 +368,7 @@
                         <li><a href="localizacion-mapa.html">Localiza nuestro centro</a></li>
                         <li><a href="politica_de_privacidad.html">Política de Privacidad</a></li>
                         <li><a href="politica_de_cookies.html">Política de Cookies</a></li>
+                        <li><a href="#" onclick="openConfig()">Configurar cookies</a></li>
 
                     </ul>
                 </div>
@@ -411,6 +430,104 @@
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
+    <!-- ===================== BANNER DE COOKIES ===================== -->
+    <div id="cookieBanner" class="position-fixed bottom-0 start-0 w-100 bg-light border-top shadow d-none"
+        style="z-index:1055;">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 gap-md-3 py-3 px-3"
+            style="max-width: 900px; margin: 0 auto;">
+            <div class="text-dark mb-2 mb-md-0 text-center text-md-start">
+                En <strong>Audioferia.es</strong> utilizamos cookies propias y de terceros con fines técnicos,
+                analíticos y de marketing.
+                Puedes aceptar todas las cookies, rechazarlas o configurarlas.
+            </div>
+
+            <div class="d-flex flex-wrap flex-md-nowrap gap-2 justify-content-center">
+                <button class="btn btn-outline-secondary btn-sm" onclick="rejectAll()">Rechazar</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="openConfig()">Configurar</button>
+                <button class="btn btn-primary btn-sm" style="background: var(--accent-color); border:none;"
+                    onclick="acceptAll()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== PANEL DE CONFIGURACIÓN ===================== -->
+    <div id="cookieConfig" class="position-fixed bottom-0 start-0 w-100 bg-white border-top shadow d-none"
+        style="z-index:1056;">
+        <div class="container d-flex flex-column align-items-center text-center gap-3 py-3 px-3"
+            style="max-width: 900px; margin: 0 auto;">
+
+            <!-- Texto y checkboxes centrados -->
+            <div class="w-100" style="max-width: 500px;">
+                <h6 class="mb-2">Configuración de cookies</h6>
+                <p class="small text-muted mb-3">Puedes permitir o rechazar las cookies según su finalidad.</p>
+
+                <div class="form-check mb-2 text-start">
+                    <input class="form-check-input" type="checkbox" checked disabled id="necessaryCookies">
+                    <label class="form-check-label fw-bold" for="necessaryCookies">
+                        Cookies técnicas necesarias (obligatorias)
+                    </label>
+                    <div class="small text-muted ms-3">Permiten el correcto funcionamiento del sitio y no se pueden
+                        desactivar.</div>
+                </div>
+
+                <div class="form-check mb-2 text-start">
+                    <input class="form-check-input border border-3 border-primary" type="checkbox"
+                        id="analyticsCookies">
+                    <label class="form-check-label fw-bold" for="analyticsCookies">
+                        Cookies analíticas (Google Analytics)
+                    </label>
+                    <div class="small text-muted ms-3">Ayudan a entender cómo interactúan los usuarios con la web para
+                        mejorar la experiencia.</div>
+                </div>
+
+                <div class="form-check mb-2 text-start">
+                    <input class="form-check-input border border-3 border-primary" type="checkbox"
+                        id="marketingCookies">
+                    <label class="form-check-label fw-bold" for="marketingCookies">
+                        Cookies de marketing (publicidad y redes sociales)
+                    </label>
+                    <div class="small text-muted ms-3">Permiten mostrar publicidad relevante y medir la efectividad de
+                        campañas externas.</div>
+                </div>
+
+                <div class="form-check mb-3 text-start">
+                    <input class="form-check-input border border-3 border-primary" type="checkbox" id="securityCookies">
+                    <label class="form-check-label fw-bold" for="securityCookies">
+                        Cookies de seguridad
+                    </label>
+                    <div class="small text-muted ms-3">Ayudan a proteger tu información y detectar accesos no
+                        autorizados.</div>
+                </div>
+
+                <!-- Enlaces en una sola línea -->
+                <div class="d-flex justify-content-center gap-2 small">
+                    <a href="/politica_de_cookies.html" class="text-decoration-underline"
+                        style="color: var(--accent-color);">
+                        Política de cookies
+                    </a>
+                    <span class="text-muted">|</span>
+                    <a href="/politica_de_privacidad.html" class="text-decoration-underline"
+                        style="color: var(--accent-color);">
+                        Política de privacidad
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botones centrados -->
+            <div class="d-flex gap-2 justify-content-center flex-wrap">
+                <button class="btn btn-outline-secondary btn-sm" onclick="cancelConfig()">Cancelar</button>
+                <button class="btn btn-primary btn-sm" style="background: var(--accent-color); border:none;"
+                    onclick="saveConfig()">Guardar preferencias</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===================== JS EXTERNO ===================== -->
+    <script src="assets/js/cookie-consent.js" defer></script>
+
+
 
     <!-- Preloader -->
     <div id="preloader"></div>
