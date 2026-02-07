@@ -24,6 +24,7 @@ function showBanner() {
   const banner = document.getElementById('cookieBanner');
   banner.classList.remove('d-none');
   banner.classList.add('animate__animated', 'animate__slideInUp');
+  showOverlay();
 }
 
 function hideBanner(el) {
@@ -31,8 +32,33 @@ function hideBanner(el) {
   setTimeout(() => {
     el.classList.add('d-none');
     el.classList.remove('animate__animated', 'animate__slideInUp', 'animate__slideOutDown');
+    hideOverlayIfNoBanners();
   }, 500);
 }
+
+
+function showOverlay() {
+  const overlay = document.getElementById('cookieOverlay');
+  if (!overlay) return; // nada que hacer si no existe
+  overlay.classList.remove('d-none');
+  document.body.style.overflow = 'hidden';
+}
+
+
+function hideOverlayIfNoBanners() {
+  const overlay = document.getElementById('cookieOverlay');
+  if (!overlay) return; // ← nada que hacer si no existe
+
+  const bannerVisible = document.getElementById('cookieBanner') && !document.getElementById('cookieBanner').classList.contains('d-none');
+  const configVisible = document.getElementById('cookieConfig') && !document.getElementById('cookieConfig').classList.contains('d-none');
+
+  if (!bannerVisible && !configVisible) {
+    overlay.classList.add('d-none');
+    document.body.style.overflow = '';
+  }
+}
+
+
 
 // ================= Acciones =================
 function acceptAll() {
@@ -71,7 +97,9 @@ function openConfig() {
   const config = document.getElementById('cookieConfig');
   config.classList.remove('d-none');
   config.classList.add('animate__animated', 'animate__slideInUp');
+  showOverlay();
 }
+
 
 function cancelConfig() {
   const config = document.getElementById('cookieConfig');

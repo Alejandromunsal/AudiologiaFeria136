@@ -91,6 +91,16 @@ h6 {
 p {
   font-size: 20px;
 }
+
+.cookie-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1054; /* debajo de los banners */
+}
+
 /* Pulsating Play Button
 ------------------------------*/
 .pulsating-play-btn {
